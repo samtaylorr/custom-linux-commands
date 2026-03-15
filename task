@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+if [ $# -eq 0 ]
+  then  
+    echo "Usage: task \"example\""
+else
+  name=$*
+  ps -x | grep --color=always "$name" | grep -v -E "grep|task"
+fi
