@@ -6,4 +6,4 @@ if [ $# -eq 0 ]; then
 fi
 
 name="$@"
-ps -x | grep --color=auto -F "${name}"
+ps -x | grep --color=always "$name" | grep -v -E "grep|$(basename "$0")"
