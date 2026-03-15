@@ -6,4 +6,4 @@ if [ $# -eq 0 ]; then
 fi
 
 name="$@"
-ps -x | grep --color=auto "[${name:0:1}]${name:1}"
+ps -x | grep --color=auto -F "[${name:0:1}]${name:1}"
