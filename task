@@ -1,9 +1,9 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
-if [ $# -eq 0 ]
-  then  
+if [ $# -eq 0 ]; then  
     echo "Usage: task \"example\""
-else
-  name=$*
-  ps -x | grep --color=always "$name" | grep -v -E "grep|task"
+    exit 1
 fi
+
+name="$@"
+ps -x | grep --color=always "$name" | grep -v -E "grep|task"
